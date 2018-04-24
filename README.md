@@ -1,5 +1,5 @@
 # Tensorflow Graph Inspection Tricks
-Often you'll want to hook into an existing model. Here are some tricks for finding tensors that you care about
+Often you want to hook into an existing model. Here are some tricks for finding tensors that you care about
 
 #### Find all the inputs to `target_node`
 
