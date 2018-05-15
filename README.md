@@ -14,7 +14,7 @@ target_node.op.inputs
 ```python
 target_node = graph.get_tensor_by_name("predictions:0")
 
-[output for op in up_one.consumers() for output in op.outputs]
+[output for op in target_node.consumers() for output in op.outputs]
 ```
 
 #### Find all the tensors that have a certain shape
