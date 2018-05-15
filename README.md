@@ -1,7 +1,7 @@
 # Tensorflow Graph Inspection Tricks
 Often you want to hook into an existing model. Here are some tricks for finding tensors that you care about
 
-#### Find all the inputs to `target_node`
+#### Find all the input tensors to `target_node`
 
 ```python
 target_node = graph.get_tensor_by_name("predictions:0")
@@ -9,12 +9,12 @@ target_node = graph.get_tensor_by_name("predictions:0")
 target_node.op.inputs
 ```
 
-#### Find all the outputs of `target_node`
+#### Find all the output tensors of `target_node`
 
 ```python
 target_node = graph.get_tensor_by_name("predictions:0")
 
-target_node.consumers()
+[output for op in up_one.consumers() for output in op.outputs]
 ```
 
 #### Find all the tensors that have a certain shape
