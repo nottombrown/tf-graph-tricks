@@ -9,6 +9,14 @@ target_node = graph.get_tensor_by_name("predictions:0")
 target_node.op.inputs
 ```
 
+#### Find all the outputs of `target_node`
+
+```python
+target_node = graph.get_tensor_by_name("predictions:0")
+
+target_node.consumers()
+```
+
 #### Find all the tensors that have a certain shape
 ```python
 target_shape = (None, 32, 32, 3)
