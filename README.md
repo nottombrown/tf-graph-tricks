@@ -6,8 +6,7 @@ Often you want to hook into an existing model. Here are some tricks for finding 
 ```python
 target_node = graph.get_tensor_by_name("predictions:0")
 
-tensors = tf.contrib.graph_editor.get_tensors(graph)
-[tensor for tensor in tensors if target_node.op in tensor.consumers()]
+target_node.op.inputs
 ```
 
 #### Find all the tensors that have a certain shape
